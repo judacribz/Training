@@ -59,7 +59,7 @@ public class Person implements Parcelable {
     public String toString() {
         return "Person{" +
                     "name='" + name + "', " +
-                    "gender='" + gender + "'" +
+                    ", gender='" + gender + "'" +
                 '}';
     }
 }

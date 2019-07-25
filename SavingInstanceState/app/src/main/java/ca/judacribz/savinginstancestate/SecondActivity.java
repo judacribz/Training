@@ -1,5 +1,7 @@
 package ca.judacribz.savinginstancestate;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,6 +37,22 @@ public class SecondActivity extends AppCompatActivity {
                 for (Person person : personList) {
                     Log.d(TAG, "onResume: " + person.toString());
                 }
+                break;
+
+            case "goToSecondForResult":
+                Person person = getIntent().getParcelableExtra("person");
+                Intent intent = new Intent();
+                intent.putExtra("personName", person.getName());
+                setResult(RESULT_OK, intent);
+                finish();
+                break;
+
+            case "sharedPrefs":
+                SharedPreferences sharedPreferences = getSharedPreferences("sp", MODE_PRIVATE);
+                String personName = sharedPreferences.getString("name", "");
+                String personGender = sharedPreferences.getString("gender", "");
+                name.setText(personName);
+                gender.setText(personGender);
                 break;
         }
     }
