@@ -1,5 +1,5 @@
 # Training
-## Saving Instance State
+## Layouts and Views
 ## Code:
 [Activities](LayoutAndViews/app/src/main/java/ca/judacribz/layoutandviews/)<br />
 [Layouts](LayoutAndViews/app/src/main/res/layout/)<br />
